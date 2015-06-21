@@ -23,7 +23,7 @@ app.get('/api/createDataPoint', function(request, response) {
 
 	var title = request.query.value;
 	var timeMillis = moment();
-	var time = timeMillis.format('YYYY/MM/DD hh:mm:ss');
+	var time = timeMillis.zone('+0800').format('YYYY/MM/DD hh:mm:ss');
 	var insert = {
 		_id: timeMillis.unix(),
 		value : title,
